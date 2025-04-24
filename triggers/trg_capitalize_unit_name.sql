@@ -1,0 +1,6 @@
+create or replace TRIGGER "SAVAGEBOT_PROD"."TRG_CAPITALIZE_UNIT_NAME" 
+BEFORE INSERT ON unit
+FOR EACH ROW
+BEGIN
+    :NEW.unit_name := UPPER(:NEW.unit_name);
+END;
